@@ -6,21 +6,15 @@ var _y
 
 func _ready():
 	screensize = get_viewport().get_visible_rect().size
-	_x = ((randi() % 10 + 1) - 5) * 10 
-	_y = ((randi() % 10 + 1) - 5) * 10
+	_x = ((randi() % 10 + 1) - 5) * 15
+	_y = ((randi() % 10 + 1) - 5) * 15
 	set_linear_velocity(Vector2(_x,_y).rotated(rotation))
 	
 func explode(normal):
-#	rotation = rad2deg(normal.angle())
-#	set_linear_velocity(Vector2(_x,_y).rotated(rotation))
-	var asteroid_sm_1 = preload("res://Asteroid_sm.tscn").instance()
-	asteroid_sm_1.set_position(global_position)
-	var asteroid_sm_2 = preload("res://Asteroid_sm.tscn").instance()
-	asteroid_sm_2.set_position(global_position)
-	get_tree().get_root().get_node("Main/Asteroids").add_child(asteroid_sm_1)
-	get_tree().get_root().get_node("Main/Asteroids").add_child(asteroid_sm_2)
+	# explosion effect
+	# score++
 	queue_free()
-	
+
 func _physics_process(delta):
 	pass
 	

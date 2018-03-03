@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Asteroid.gd" type="Script" id=1]
-[ext_resource path="res://gfx/asteroid.png" type="Texture" id=2]
+[ext_resource path="res://Asteroid_sm.gd" type="Script" id=1]
+[ext_resource path="res://gfx/asteroid_sm.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 4.12311
+radius = 3.0
 
-[node name="Asteroid" type="RigidBody2D" index="0" groups=[
+[node name="Asteroid" type="RigidBody2D" groups=[
 "asteroid",
 ]]
 

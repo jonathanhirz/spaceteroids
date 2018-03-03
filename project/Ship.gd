@@ -35,8 +35,10 @@ func _physics_process(delta):
 	var collision = move_and_collide(velocity * speed)
 	velocity *= 0.9
 	
+	# ship collision. if hit asteroid or fireball or dragon, ?YOUDIE?
 	if(collision):
-		print(collision.collider_metadata.get_meta_list())
+		if(collision.collider.is_in_group("asteroid")):
+			queue_free()
 
 	# turn the ship based on its velocity.
 	# still need to stop this from resetting angle at 0

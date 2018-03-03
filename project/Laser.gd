@@ -29,4 +29,8 @@ func _process(delta):
 		queue_free()
 	
 func _physics_process(delta):
-	move_and_collide(Vector2(0,-1).rotated(rotation) * speed)
+	var collision = move_and_collide(Vector2(0,-1).rotated(rotation) * speed)
+	if(collision):
+		if(collision.collider.is_in_group("asteroid")):
+			collision.collider.explode(collision.normal)
+			queue_free()

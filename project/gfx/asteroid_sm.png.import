@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/space_dragon_1.png-bd29b01b20ff5d3a344179d8afda54ce.stex"
+path="res://.import/asteroid_sm.png-9cdea43c053c46fbd7bbc1b9944ee04c.stex"
 
 [deps]
 
-source_file="res://gfx/space_dragon_1.png"
-source_md5="59058c86cd227a0395f8f63c52750c2f"
+source_file="res://gfx/asteroid_sm.png"
+source_md5="1f13197cce471141429fdd12ac276131"
 
-dest_files=[ "res://.import/space_dragon_1.png-bd29b01b20ff5d3a344179d8afda54ce.stex" ]
-dest_md5="3f9bf53dc787b594085f55286aa26b01"
+dest_files=[ "res://.import/asteroid_sm.png-9cdea43c053c46fbd7bbc1b9944ee04c.stex" ]
+dest_md5="6c766fbd83299f01a7e195f0fc017d56"
 
 [params]
 
