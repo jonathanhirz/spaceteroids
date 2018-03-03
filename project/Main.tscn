@@ -42,23 +42,23 @@ position = Vector2( 228, 92 )
 
 [node name="Asteroid_02" parent="Asteroids" index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 261, 59 )
-rotation = -0.898045
+position = Vector2( 183, 50 )
+rotation = -3.13898
 
 [node name="Asteroid_03" parent="Asteroids" index="2" instance=ExtResource( 2 )]
 
-position = Vector2( 197.142, 37.8765 )
-rotation = 0.680122
+position = Vector2( 83.4776, 65.5444 )
+rotation = -4.70061
 
 [node name="Asteroid_04" parent="Asteroids" index="3" instance=ExtResource( 2 )]
 
-position = Vector2( 53.1769, 59.1625 )
-rotation = 1.16612
+position = Vector2( 102.624, 122.794 )
+rotation = -4.21614
 
 [node name="Asteroid_05" parent="Asteroids" index="4" instance=ExtResource( 2 )]
 
-position = Vector2( 94.2865, 139.269 )
-rotation = 2.13359
+position = Vector2( 289.347, 40.1425 )
+rotation = -4.5252
 
 [node name="Ship" parent="." index="2" instance=ExtResource( 3 )]
 
@@ -68,7 +68,7 @@ speed = 12
 
 [node name="SpaceDragon" parent="." index="3" instance=ExtResource( 4 )]
 
-position = Vector2( 337, 16 )
+position = Vector2( 308, 16 )
 
 [node name="AsteroidTimer" type="Timer" parent="." index="4"]
 

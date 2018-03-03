@@ -32,8 +32,11 @@ func _physics_process(delta):
 	# get input and apply movement vector to ship
 	acceleration = Vector2(_get_axis("horizontal"), _get_axis("vertical"))
 	velocity += acceleration * delta
-	move_and_collide(velocity * speed)
+	var collision = move_and_collide(velocity * speed)
 	velocity *= 0.9
+	
+	if(collision):
+		print(collision.collider_metadata.get_meta_list())
 
 	# turn the ship based on its velocity.
 	# still need to stop this from resetting angle at 0
@@ -67,9 +70,3 @@ func _get_axis(orientation):
 			return 1
 		else:
 			return 0
-
-
-func _on_Area2D_body_entered(body):
-	# death animation, game over/reset
-#	queue_free()
-	pass
