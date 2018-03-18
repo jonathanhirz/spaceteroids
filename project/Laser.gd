@@ -31,6 +31,9 @@ func _process(delta):
 func _physics_process(delta):
 	var collision = move_and_collide(Vector2(0,-1).rotated(rotation) * speed)
 	if(collision):
+		# this is a way to check collision against a bunch of (maybe instantiated) stuff
+		# just use groups!
 		if(collision.collider.is_in_group("asteroid")):
-			collision.collider.explode(collision.normal)
+			# you can even call a function the object that was hit
+			collision.collider.explode()
 			queue_free()
