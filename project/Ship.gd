@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal dead
+
 export var speed = 12
 
 var acceleration = Vector2()
@@ -17,7 +19,7 @@ func _process(delta):
 		laser.set_position($Gun.global_position)
 		laser.set_rotation($Gun.get_parent().rotation)
 		get_tree().get_root().add_child(laser)
-		
+
 	if(position.x < 0):
 		position.x = screensize.x
 	if(position.x > screensize.x):
@@ -28,34 +30,35 @@ func _process(delta):
 		position.y = 0
 
 func _physics_process(delta):
-	
+
 	# get input and apply movement vector to ship
 	acceleration = Vector2(_get_axis("horizontal"), _get_axis("vertical"))
 	velocity += acceleration * delta
 	var collision = move_and_collide(velocity * speed)
 	velocity *= 0.9
-	
+
 	# ship collision. if hit asteroid or fireball or dragon, ?YOUDIE?
 	if(collision):
 		if(collision.collider.is_in_group("asteroid")):
+			emit_signal("dead")
 			queue_free()
 
 	# turn the ship based on its velocity.
 	# still need to stop this from resetting angle at 0
 	if(abs(velocity.x) > 0.0001 || abs(velocity.y) > 0.0001):
 		rotation_degrees = _get_angle()
-		
+
 	# ship animations
 	if(velocity.length() > 0.1):
 		$AnimatedSprite.animation = "engines_on"
 	else:
 		$AnimatedSprite.animation = "idle"
 
-	
+
 func _get_angle():
 	# degree angle of player ship, based on velocity vector
 	return rad2deg(atan2(velocity.x, -velocity.y))
-	
+
 func _get_axis(orientation):
 	# input axis for key presses
 	if(orientation == "horizontal"):
