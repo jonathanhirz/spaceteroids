@@ -23,7 +23,7 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[node name="Ship" type="KinematicBody2D"]
+[node name="Ship" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -46,6 +46,7 @@ position = Vector2( 0, -8 )
 
 frames = SubResource( 2 )
 animation = "engines_on"
+frame = 1
 playing = true
 _sections_unfolded = [ "Animation" ]
 

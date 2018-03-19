@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 1, 3 )
 
-[node name="Laser" type="KinematicBody2D"]
+[node name="Laser" type="KinematicBody2D" index="0"]
 
 z_index = -1
 input_pickable = false

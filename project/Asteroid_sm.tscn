@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 radius = 3.0
 
-[node name="Asteroid" type="RigidBody2D" groups=[
+[node name="Asteroid" type="RigidBody2D" index="0" groups=[
 "asteroid",
 ]]
 
